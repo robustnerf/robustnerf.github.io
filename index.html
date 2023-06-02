@@ -42,10 +42,10 @@
     <div class="container" id="header" style="text-align: center; margin: auto;">
         <div class="row" id="title-row" style="max-width: 100%; margin: 0 auto; display: inline-block">
             <h2 class="col-md-12 text-center" id="title">
-                <b>RobustNeRF</b>: Ignoring Distractors with Robust Losses
-                <!-- <small>
-                    CVPR 2022 (Oral Presentation)
-                </small> -->
+                <b>RobustNeRF</b>: Ignoring Distractors with Robust Losses<br>
+                <small>
+                    CVPR 2023 (Oral Presentation & Higlight)
+                </small>
             </h2>
         </div>
         <div class="row" id="author-row" style="margin:0 auto;">
@@ -53,14 +53,47 @@
                 <table class="author-table" id="author-table">
                     <tr>
                         <td>
-                            <a style="text-decoration:none" href="">
-                                Anonymous Author(s)
+                            <a style="text-decoration:none" href="https://scholar.google.com/citations?user=l8wQ39EAAAAJ&hl=th">
+                              Sara Sabour<sup>1,2</sup>
                             </a>
-                            <br>Affiliation
+                        </td>
+                        <td>
+                            <a style="text-decoration:none" href="https://scholar.google.com/citations?user=mOOsGrQAAAAJ&hl=en">
+                              Suhani Vora<sup>1</sup>
+                            </a>
+                        </td>
+                        <td>
+                            <a style="text-decoration:none" href="https://www.stronglyconvex.com/about.html">
+                             Daniel Duckworth<sup>1</sup>
+                            </a>
                         </td>
                     </tr>
-                </table>
+                    <tr>
+                        <td>
+                            <a style="text-decoration:none" href="https://www.catalyzex.com/author/Ivan%20Krasin">
+                                Ivan Krasin<sup>1</sup>
+                            </a>
+                        </td>
+                        <td>
+                            <a style="text-decoration:none" href="https://www.cs.toronto.edu/~fleet/">
+                              David J. Fleet<sup>1,2</sup>
+                            </a>
+                        </td>
+                        <td>
+                            <a style="text-decoration:none" href="https://taiya.github.io/">
+                              Andrea Tagliasacchi<sup>1,2,3</sup>
+                            </a>
+                        </td>
+                    </tr>
+                </table>                
             </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <p class="text-center">
+                        Google Research, Brain Team<sup>1</sup>&emsp; University of Toronoto<sup>2</sup>&emsp; Simon Fraser University<sup>3</sup>
+                    </p>
+                </div>
+            </div>    
         </div>
     </div>
     <script>
@@ -104,15 +137,47 @@
 			</div>
         </div> -->
 
+
+
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Teaser
+                </h3>
+                <div class="text-center">
+                    <div style="position:relative;padding-top:56.25%;">
+                        <video class="video" preload="auto" style="position:absolute;top:0;left:0;width:100%;height:100%;" loop autoPlay muted src="video/robustnerf_twitter.m4v"></video>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    Neural radiance fields (NeRF) excel at synthesizing new views given multi-view, calibrated images of a static scene. When scenes include distractors, which are not persistent during image capture (moving objects, lighting variations, shadows), artifacts appear as  view-dependent effects or 'floaters'. To cope with distractors, we advocate a form of robust estimation for NeRF training, modeling distractors in training data as outliers of an optimization problem. Our method successfully removes outliers from a scene and improves upon our baselines, on synthetic and real-world scenes. Our technique is simple to incorporate in modern NeRF frameworks, with 
+                    few hyper-parameters. It does not assume a priori knowledge of the types of distractors, and is instead focused on the optimization problem rather than pre-processing or modeling transient objects.
+                </p>
+            </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    Results
+                </h3>
                 Comparisons of RobustNeRF(left) and MipNeRF360 (right) on BabyYoda Distractors Dataset.
 
                 
                 <table width="100%">
                     <tr>
                         <td align="left" valign="top" width="50%">
-                                <video class="video" preload="auto" id="water4" loop playsinline autoPlay muted src="video/yoda_robustnerf_split.mp4" onplay="resizeAndPlayDual(this, 'water5')"></video>
+                                <video class="video" preload="auto" id="water4" loop playsinline autoPlay muted src="video/yoda_robustnerf_split.mp4" onplay="resizeAndPlayDualWhenReady(this, 'water5')"></video>
                                 
                                 <canvas height=0 class="videoMerge" id="water4Merge"></canvas>
                         </td>
@@ -135,7 +200,7 @@
                 <table width="100%">
                     <tr>
                         <td align="left" valign="top" width="50%">
-                                <video class="video" preload="auto" id="water2" loop playsinline autoPlay muted src="video/robustnerf_crab_split.mp4" onplay="resizeAndPlayDual(this, 'water3')"></video>
+                                <video class="video" preload="auto" id="water2" loop playsinline autoPlay muted src="video/robustnerf_crab_split.mp4" onplay="resizeAndPlayDualWhenReady(this, 'water3')"></video>
                                 
                                 <canvas height=0 class="videoMerge" id="water2Merge"></canvas>
                         </td>
@@ -150,6 +215,53 @@
             </div>
         </div>
 
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            </br>Comparisons of RobustNeRF(left) and MipNeRF360 (right) on Statue Distractors Dataset.</br>
+
+                
+                <table width="100%">
+                    <tr>
+                        <td align="left" valign="top" width="50%">
+                                <video class="video" preload="auto" id="water6" loop playsinline autoPlay muted src="video/t_balloon_robustnerf_split.mp4" onplay="resizeAndPlayDualWhenReady(this, 'water7')"></video>
+                                
+                                <canvas height=0 class="videoMerge" id="water6Merge"></canvas>
+                        </td>
+                        <td align="left" valign="top" width="50%">
+                                <video class="video" preload="auto" id="water7" loop playsinline autoPlay muted src="video/t_balloon_360_split.mp4"></video>
+                                
+                                <canvas height=0 class="videoMerge" id="water7Merge"></canvas>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+            </br>Comparisons of RobustNeRF(left) and MipNeRF360 (right) on Android Distractors Dataset.</br>
+
+                
+                <table width="100%">
+                    <tr>
+                        <td align="left" valign="top" width="50%">
+                                <video class="video" preload="auto" id="water8" loop playsinline autoPlay muted src="video/robustnerf_and-bot_split.mp4" onplay="resizeAndPlayDualWhenReady(this, 'water9')"></video>
+                                
+                                <canvas height=0 class="videoMerge" id="water8Merge"></canvas>
+                        </td>
+                        <td align="left" valign="top" width="50%">
+                                <video class="video" preload="auto" id="water9" loop playsinline autoPlay muted src="video/360_and-bot_split.mp4"></video>
+                                
+                                <canvas height=0 class="videoMerge" id="water9Merge"></canvas>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
         <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="video-compare-container" id="waterDiv">
@@ -171,23 +283,6 @@
             </div>
         </div> -->
 
-
-
-
-
-
-
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <h3>
-                    Abstract
-                </h3>
-                <p class="text-justify">
-                    Neural radiance fields (NeRF) excel at synthesizing new views given multi-view, calibrated images of a static scene. When scenes include distractors, which are not persistent during image capture (moving objects, lighting variations, shadows), artifacts appear as  view-dependent effects or 'floaters'. To cope with distractors, we advocate a form of robust estimation for NeRF training, modeling distractors in training data as outliers of an optimization problem. Our method successfully removes outliers from a scene and improves upon our baselines, on synthetic and real-world scenes. Our technique is simple to incorporate in modern NeRF frameworks, with 
-                    few hyper-parameters. It does not assume a priori knowledge of the types of distractors, and is instead focused on the optimization problem rather than pre-processing or modeling transient objects.
-                </p>
-            </div>
-        </div>
 
         <!-- <image src="img/method.png" class="img-responsive" alt="overview" width="60%" style="max-height: 450px;margin:auto;">
 

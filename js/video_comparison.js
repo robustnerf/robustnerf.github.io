@@ -323,3 +323,19 @@ function resizeAndPlayDual(element, id2)
   playVidsDual(element.id, element2.id);
 }
 
+
+function resizeAndPlayDualWhenReady(element, id2) {
+    var element2 = document.getElementById(id2);
+    var cnt = 0;
+    setTimeout(function playIfReady() {
+        if ((element2.readyState != 4) || (element.readyState != 4)){
+            console.log("second video is not ready yet, cnt=" + cnt);
+            cnt++;
+            // Bail out if it retries for more than 10 seconds.
+            if (cnt < 1000) {
+                setTimeout(playIfReady, 10);
+            }
+        }
+        resizeAndPlayDual(element, id2);
+    }, 10);
+}
